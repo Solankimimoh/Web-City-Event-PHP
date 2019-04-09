@@ -97,73 +97,69 @@
         <!-- /header -->
         <!-- Header-->
 
+
         <div class="col-lg-12 ">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">View Bookings</strong>
+                    <strong class="card-title">Users</strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered table-dark">
                         <thead>
                             <tr>
+
                                 <th scope="col">#</th>
-                                <th scope="col">User Name</th>
-                                <th scope="col">Event Name</th>
-                                <th scope="col">Event Category</th>
-                                <th scope="col">E-Mail id</th>
-                                <th scope="col">Mobile No.</th>
-                                <th scope="col">Tickets</th>
-                                <th scope="col">UPDATE</th>
-                                <th scope="col">DELETE</th>
+                                <th scope="col">Holder Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Ticket Count</th>
+                                <th scope="col">EVENT</th>
                             </tr>
                         </thead>
                         <tbody>
+
+                            <?php 
+                                require "include/Database.php";
+                                $db = new Database();     
+                        $selectbooking = "SELECT * FROM `booking`";
+                            
+                       $result = mysqli_query($db->db_connect(),$selectbooking);
+                        
+                        while($row = mysqli_fetch_row($result))
+                        {
+                            ?>
+                            
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Parth Gajjar</td>
-                                <td>Arijit Singh Live</td>
-                                <td>Music</td>
-                                <td>parthgajjar3672@gmail.com</td>
-                                <td>8511923672</td>
-                                <td>2</td>
-                                <td>
-                                    <a href="" class="btn btn-success">UPDATE</a>
-                                </td>
-                                <td>
-                                    <a href="" class="btn btn-danger">DELETE</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Sunny Darji</td>
-                                <td>Arijit Singh Live</td>
-                                <td>Music</td>
-                                <td>sunnydarji711@gmail.com</td>
-                                <td>9601753220</td>
-                                <td>4</td>
-                                <td>
-                                    <a href="" class="btn btn-success">UPDATE</a>
-                                </td>
-                                <td>
-                                    <a href="" class="btn btn-danger">DELETE</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Rohit Prajapti</td>
-                                <td>Arijit Singh Live</td>
-                                <td>Music</td>
-                                <td>rohitprajapati299@gmail.com</td>
-                                <td>8000092014</td>
-                                <td>3</td>
-                                <td>
-                                    <a href="" class="btn btn-success">UPDATE</a>
-                                </td>
-                                <td>
-                                    <a href="" class="btn btn-danger">DELETE</a>
-                                </td>
+                                <th scope="row"><?php echo $row[0]; ?></th>
+                                <td><?php echo $row[1]; ?></td>
+                                <td><?php echo $row[2]; ?></td>
+                                <td><?php echo $row[3]; ?></td>
+                                <td><?php 
+                            
+                                  
+                                $slectevent = "SELECT * FROM `events` WHERE `id`=$row[4]";
+                                
+                            $result1 = mysqli_query($db->db_connect(),$slectevent);
+                            
+                            while($row1=mysqli_fetch_row($result1))
+                            {
+                                echo $row1[1];
+                            }
+                            
+                              ?></td>
+                                
 
                             </tr>
+
+
+                            <?php
+                            }
+                            
+                            
+                            ?>
+
+
+
+
                         </tbody>
                     </table>
                 </div>

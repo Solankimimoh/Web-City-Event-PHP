@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['username']))
+if(!isset($_SESSION['usersname']))
 {
     header("Location: index.php");
 }
@@ -139,10 +139,10 @@ $id = $_GET['id'];
 
 
 
-                            <div class="card-footer ">
+                            <div class="card-footer " style="text-align:center;font-size:20px;">
                                 <small class="text-muted">
-
-                                    <?php 
+                                    <strong>
+                                        <?php 
                                     
                                 $selectCategory = "SELECT * FROM `category` WHERE `id`=$row[8]";
                         
@@ -155,8 +155,11 @@ $id = $_GET['id'];
                         
                         
                                     ?>
-
+                                    </strong>
                                 </small>
+                                <div class="w-100" style="text-align:center">
+                                    <a href="bookticket.php?id=<?php echo $row[0];?>" class="btn btn-success">Book Now</a>
+                                </div>
                             </div>
 
                         </div>

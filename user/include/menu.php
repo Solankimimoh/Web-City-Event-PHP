@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">City Fair</a>
+        <a class="navbar-brand" href="index.php">City Fair</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +27,7 @@
 
                 <?php 
                 
-                if(isset($_SESSION['username']))
+                if(isset($_SESSION['usersname']))
                 {
                     ?>
                 <li class="nav-item">
@@ -38,7 +38,7 @@
                         Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="showbooking.php">Booking List</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>

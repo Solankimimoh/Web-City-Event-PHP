@@ -10,7 +10,7 @@ if (isset($_REQUEST['sbmt'])) {
         ?>
         <script>
             alert("Please enter the details");
-            window.location.href = "login.php";
+            window.location.href = "index.php";
         </script>
         <?php
     } else {
@@ -19,9 +19,13 @@ if (isset($_REQUEST['sbmt'])) {
         $stmt = $db->db_connect()->prepare($selectUser);
         $stmt->bind_param("ss", $email, $password);
         $rowCount = $stmt->execute();
-        $rowCount = $stmt->fetch();
-        if ($rowCount > 0) {
-            $_SESSION['username'] = $email;
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $result_1 = $row['id'];
+        
+        if ($result->num_rows > 0) {
+            $_SESSION['usersname'] = $email;
+            $_SESSION['usersid'] = $result_1;
             ?>
             <script>
                 alert("Login SuccessFully");

@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_REQUEST['sbmt']))
 {
     
@@ -15,7 +14,6 @@ if(isset($_REQUEST['sbmt']))
 <script>
     alert("Please fill the details");
     window.location.href = "registration.php";
-
 </script>
 <?php
     }else
@@ -35,7 +33,6 @@ if(isset($_REQUEST['sbmt']))
 <script>
     alert("Registration Successfully");
     window.location.href = "login.php";
-
 </script>
 <?php
         }else
@@ -53,10 +50,7 @@ else
 <script>
     alert("Please fill the details");
     window.location.href = "registration.php";
-
 </script>
 <?php
 }
-
-
 ?>

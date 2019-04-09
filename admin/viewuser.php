@@ -110,47 +110,43 @@
 
                                 <th scope="col">#</th>
                                 <th scope="col">User Name</th>
-                                <th scope="col">E-Mail id</th>
+                                <th scope="col">Email ID</th>
+                                <th scope="col">Password</th>
                                 <th scope="col">Mobile No.</th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
+
+                            <?php 
+                                require "include/Database.php";
+                                $db = new Database();   
+                            $selectuser = "SELECT * FROM `users`";
+                            
+                            $resul1 = mysqli_query($db->db_connect(),$selectuser);
+                            
+                            
+                            while($row = mysqli_fetch_row($resul1))
+                            {
+                                ?>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Parth Gajjar</td>
-                                <td>parthgajjar3672@gmail.com</td>
-                                <td>8511923672</td>
+                                <th scope="row"><?php echo $row[0]; ?></th>
+                                <td><?php echo $row[1]; ?></td>
+                                <td><?php echo $row[2]; ?></td>
+                                <td><?php echo $row[3]; ?></td>
+                                <td><?php echo $row[4]; ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-fw">DELETE</button>
+                                    <a type="button" class="btn btn-danger btn-fw" href="deleteuser.php?id=<?php echo $row[0]; ?>">DELETE</a>
                                 </td>
-
-
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Sunny Darji</td>
-                                <td>sunnydarji711@gmail.com</td>
-                                <td>9601753220</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-fw">DELETE</button>
-                                </td>
-
-
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Rohit Prajapti</td>
-                                <td>rohitprajapati299@gmail.com</td>
-                                <td>8000092014</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-fw">DELETE</button>
-                                </td>
-
-
 
                             </tr>
 
+
+                            <?php
+                            }
+                            
+                            
+                            ?>
 
 
 

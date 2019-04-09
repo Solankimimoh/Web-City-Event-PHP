@@ -139,8 +139,7 @@
                                 <th scope="row"><?php echo $row[0]; ?></th>
                                 <td><?php echo $row[1]; ?></td>
                                 <td><?php echo $row[2]; ?></td>
-                                <td><a href="" class="btn btn-success">UPDATE</a></td>
-                                <td><a href="" class="btn btn-danger">DELETE</a></td>
+                                <td><a href="deletecate.php?id=<?php echo $row[0]; ?>" class="btn btn-danger">DELETE</a></td>
                             </tr>
                         
 							
