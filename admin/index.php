@@ -1,3 +1,17 @@
+   <?php 
+  session_start();
+?>
+   <?php
+    if (isset($_SESSION['adminemail'])) {
+        ?>
+   <script>
+       window.location.href = "home.php";
+
+   </script>
+   <?php
+    }
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -41,16 +55,16 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form action="home.php">
+                    <form action="adminlgn.php">
                         <div class="form-group">
                             <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <label>Passwsord</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
-                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Log in</button>
+                        <button type="submit"  name="sbmt" class="btn btn-success btn-flat m-b-30 m-t-30">Log in</button>
 
 
 

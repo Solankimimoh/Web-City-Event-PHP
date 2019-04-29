@@ -63,7 +63,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Username is required">
 						<span class="label-input100">Mobile</span>
-						<input class="input100" type="text" name="mobile" placeholder="Username...">
+						<input class="input100" type="text" name="mobile" placeholder="Mobile No...">
 						<span class="focus-input100"></span>
 					</div>
 

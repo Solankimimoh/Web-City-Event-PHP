@@ -136,7 +136,7 @@
                                 <td><?php echo $row[3]; ?></td>
                                 <td><?php echo $row[4]; ?></td>
                                 <td>
-                                    <a type="button" class="btn btn-danger btn-fw" href="deleteuser.php?id=<?php echo $row[0]; ?>">DELETE</a>
+                                    <a type="button" class="btn btn-danger btn-fw" href="deleteuser.php?id=<?php echo $row[0];?>">DELETE</a>
                                 </td>
 
                             </tr>

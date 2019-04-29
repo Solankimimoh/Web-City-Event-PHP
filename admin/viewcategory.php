@@ -111,7 +111,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Category Name</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Update</th>
+                                
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>

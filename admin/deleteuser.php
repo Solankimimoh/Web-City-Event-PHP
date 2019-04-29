@@ -5,7 +5,7 @@ $db = new Database();
 
 $id = $_GET['id'];
 							
-$deleteEvent =  "DELETE  FROM `users` WHERE `id`=$id";
+$deleteEvent =  "DELETE FROM `users` WHERE `id`=$id";
 
 $rowCount = mysqli_query($db->db_connect(),$deleteEvent);
 
